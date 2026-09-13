@@ -1,0 +1,20 @@
+[Unit]
+Description=TTYD Direwolf Web Terminal
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/ttyd -p 7688 \
+  --max-clients 3 \
+  --client-option idleTimeout=3600 \
+  --client-option reconnect=true \
+  --client-option pingInterval=30 \
+  --client-option rendererType=canvas \
+  --client-option scrollback=1000 \
+  journalctl -u direwolf.service -n 15 -f -o cat
+Restart=always
+RestartSec=3
+User=aprs
+WorkingDirectory=/home/aprs
+
+[Install]
+WantedBy=multi-user.target

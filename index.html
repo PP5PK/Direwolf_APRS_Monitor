@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>APRS Direwolf Dashboard</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #0a0a0a;
+      color: #0f0;
+      font-family: monospace;
+    }
+
+    header {
+      background: #111;
+      padding: 10px;
+      border-bottom: 1px solid #0f0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 18px;
+      color: #0f0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .terminal {
+      flex: 1;
+      display: flex;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .footer {
+      padding: 5px;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      border-top: 1px solid #222;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>Direwolf APRS Live Monitor</h1>
+  </header>
+
+  <div class="terminal">
+    <iframe src="/terminal"></iframe>
+  </div>
+
+  <div class="footer">
+    Direwolf Live Feed via ttyd
+  </div>
+
+</div>
+
+</body>
+</html>
